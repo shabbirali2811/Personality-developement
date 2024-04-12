@@ -1,0 +1,333 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <title>Blendin or Standout</title>
+<style>
+        body {
+            margin: 0;     /* CSS for the navigation bar */
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        nav {
+        	padding: 0 24px !important;
+            background-color: #E8E8E8;
+        }   
+        .nav-item.nav-link{
+        	font-size:18px;
+        	color: #454545 !important;
+        	position:relative;
+        }
+        .nav-item.nav-link:hover,
+        .nav-item.nav-link.active{
+        	color: #e44e4e !important;
+        }
+         .nav-item.nav-link.active:after{
+         	    content: " ";
+			    display: block;
+			    width: 100%;
+			    height: 3px;
+			    background-color: #e44e4e;
+			    position: absolute;
+			    top: 49px;
+			    left: 0;
+         }   
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 7px 19px;
+            text-decoration: none;
+            font-family: cursive;
+            font-size: 29px;
+        }
+        
+        li a:hover {
+            background-color: #555;
+        }
+
+        /* CSS for logo */
+        .navbar-brand img {
+            width: 50px; /* Adjust the desired width */
+            height: 50px; /* Adjust the desired height */
+            border-radius: 50%; /* Creates a circular shape */
+            margin-right: 10px; /* Add spacing between logo and text */
+        }
+
+    .carousel-item img {
+    filter: blur(2px);  /* Adjust the blur amount as needed */ 
+  }
+    
+    .custom-caption {  /* New custom styles for caption positioning */
+      
+      padding: 5px 15px;
+      position: absolute;
+      bottom: 120px;
+      left: 0;
+      right: 100px;
+      text-align: left;
+      color: white;
+      max-width: 700px;
+      font-size: 23px;
+    }
+
+.carousel-control-prev,
+    .carousel-control-next {
+      top: 20%;
+      transform: translateY(-50%);
+    }
+.button-container {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
+    }
+ 
+button.btn-primary {
+  margin-left: 20px;
+  font-size: 18px; /* Adjust the font size for the button text */
+  padding: 12px 30px; /* Adjust the padding to increase button size */
+  }
+
+
+.carousel-caption h5 {
+    text-decoration: underline;
+    font-family: 'Your Desired Font', sans-serif; /* Replace 'Your Desired Font' with the actual font you want to use */
+    font-size: 37px; /* changes heading size */
+    font-weight: bold; /* Optionally, adjust the font weight */
+  }
+
+.carousel-caption h6 {
+    font-size: 36px;
+    text-decoration: underline;
+    font-family: 'Your Desired Font', sans-serif; /* Replace 'Your Desired Font' with the actual font you want to use */
+    font-weight: bold; /* Optionally, adjust the font weight */
+  }
+
+.custom-bottom-p {
+     
+     max-width: 810px;
+     font-size: 20px; /* second page upper <p> tag depends on this font */
+}
+
+p {
+  flex: 1; /* Allow the <p> to grow and take up remaining space */
+  font-family: 'Your Desired Font', sans-serif;
+  font-size: 18px; /* Front page <p> tag adjustment */ 
+  padding: 20px; /* changes padding of front carousel slide */
+  }
+
+
+.half-width-paragraph {
+            width: 50%; /* Set the width to 50% of the page */
+            margin-top: 50px;
+            padding: 30px 15px;
+            background-color: #f0f0f0; /* Add a background color */
+        }
+        .heading {
+            font-size: 45px; /* Modify the heading size as needed */
+            font-weight: cursive;
+            padding: 20px 5px 20px;
+            margin-bottom: 24px;
+        }
+        .lower-heading {
+            font-size: 33px; /* Modify the lower heading size as needed */
+            font-weight: cusive;
+            margin-bottom: 30px;
+        }
+        .bullet-paragraph {
+            font-size: 20px; /* Modify the bullet paragraph size as needed */
+            font-style: italic;
+            margin-left: 20px; /* Add some left margin for bullets */
+            margin-bottom: 10px; 
+        }
+
+
+        .video-content {
+  float: right; /* Float the video container to the right */
+  margin-right: -70px;   /*increase in value will shift the video to left */
+  max-width: 50%; /* Set a maximum width for the video container */
+  margin-top: -655px; /* Move the video UP by increasing value */
+}
+
+/* Adjust the width and height of the embedded video as needed */
+.video-content iframe {
+  width: 75%; /* increase width of video */
+  height: 40%; /* increase height of video */
+}
+
+/* Adjust the width and margin of the text content to make space for the video */
+.text-content {
+  text-align: center;
+  width: 86%; /* Adjust the width of the text content accordingly */
+  margin-left: -37px; /*Increase value to move text towards left */
+  font-size: 15px;
+  padding: 30px;
+}
+
+/* Clear the float to prevent content below from overlapping */
+.content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.google-link {
+  color: blue; /* Set the initial link color */
+  text-decoration: none; /* Remove the default underline */
+  transition: color 0.3s; /* Add a smooth color transition on hover */
+}
+
+/* Change the link color on hover */
+.google-link:hover {
+  color: red; /* Set the link color on hover */
+}
+.bottom-p {
+  padding: 12px;
+  text-align: center;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+/* Style for the text */
+.image-text {
+  position: absolute;
+  top: 20%; /* Adjust the vertical positioning of the text */
+  left: 50%; /* Adjust the horizontal positioning of the text */
+  transform: translate(-50%, -50%); /* Center the text both vertically and horizontally */
+  color: white; /* Text color */
+  font-size: 17px; /* Font size */
+  font-weight: cursive; /* Font weight */
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add a text shadow for better visibility */
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background behind the text for better readability */
+  padding: 10px 10px; /* Optional: Add padding to the text for spacing */
+}
+
+</style>
+</head>
+
+<body>
+	<nav class="page-navbar navbar navbar-expand-lg navbar-light">
+	  <a class="navbar-brand" href="#"><img src="LOGO.jpg" alt="Logo">BLENDin OR STANDout</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="navbar-menu collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+	    <div class="navbar-nav">
+	    	<a class="nav-item nav-link mx-2 active" href="#">Home</a>
+	      	<a class="nav-item nav-link mx-2" href="index1.html">Login</a>
+	      	<a class="nav-item nav-link" href="register.html">Register</a>
+	      	
+	    </div>
+	  </div>
+	</nav> 
+ 
+  <div class="carousel-container">
+  <div id="myCarousel" class="carousel slide" >
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="website demo10.png" class="d-block w-100" alt="Image 1" style="max-width:100%; max-height: 600px;">
+    <div class="carousel-caption custom-caption d-none d-md-block">
+            <h5>Welcome to BLENDin or STANDout!</h5>
+            <p class="custom-bottom">In a world where individuality takes center stage, the question of whether to blend in or stand out is more relevant than ever. The journey of <strong><span style="color: #FF4500;">personal development</span></strong>  is a transformative process that empowers us to discover our authentic selves.<br><br>Join us today and take the first step towards becoming the best version of yourself!"</p>
+                     
+          </div> 
+    </div>
+    <div class="carousel-item">
+      <img src="website demo10.png" class="d-block w-100" alt="Image 2" style="max-width:100%; max-height: 600px;">
+      <div class="carousel-caption custom-caption custom-bottom-p d-none d-md-block">
+            <h5>Skills you need</h5>
+            <p class="custom-bottom-p">Effective personality development requires a diverse set of skills, including communication, emotional intelligence, adaptability, self-confidence, and empathy. These skills empower individuals to build meaningful relationships, navigate challenges, and project their authentic selves, ultimately fostering personal and professional growth.<br><br>Just in case you would like to have a look at some famous personalities who walked this path <a href="https://en.wikipedia.org/wiki/James_Clear" style="color: #00CED1;">Have a Look!</a></p>
+          </div>
+    </div>
+<div class="carousel-item">
+  <img src="website demo10.png" class="d-block w-100" alt="Image 3" style="max-width:100%; max-height: 600px;">
+  <div class="carousel-caption custom-caption custom-bottom-p d-none d-md-block">
+    <h5>The Creative Mind</h5>
+            <p class="custom-bottom-p">Want to learn about your personality and identify your strongest traits? Bingo!&nbsp&nbspThis website offers convincing answers on questions related to psychology and self-help online.<br><br><br>An article you may like :&nbsp<a href="https://www.wikihow.com/Determine-Your-Myers-Briggs-Personality-Type" style="color: #00CED1;">Visit Now </a></p>
+  </div>
+</div>
+
+
+
+
+
+
+    <!-- Add more carousel items as needed -->
+  </div>
+  <ul class="carousel-indicators">
+    <li  data-bs-slide-to="0" class="active"></li>
+    <li  data-bs-slide-to="1"></li>
+    <li data-bs-slide-to="2"></li>
+    <!-- Add more indicators as needed -->
+  </ul>
+</div></div>
+
+<a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev" style="left: 7%; transform: translateX(-50%);">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</a>
+<a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next" style="right: 9%; transform: translateX(50%);">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<body>
+
+   
+    <div class="half-width-paragraph">
+        <form action="index1.html">
+                       <button type="submit" class="btn btn-primary">Proceed</button>
+                      <script>
+window.embeddedChatbotConfig = {
+chatbotId: "6B8IfjwsW889mKip3-17y",
+domain: "www.chatbase.co"
+}
+</script>
+<script
+src="https://www.chatbase.co/embed.min.js"
+chatbotId="6B8IfjwsW889mKip3-17y"
+domain="www.chatbase.co"
+defer>
+</script>
+                       </form>
+        <h1 class="heading">The Big Five Aspects Scale</h1>
+        <h2 class="lower-heading">Measure your Openness to Experience, Conscientiousness, Extraversion, Agreeableness, and Neuroticism</h2>
+        <ul>
+            <li class="bullet-paragraph"><strong>Take the guesswork out of habit-building.</strong> 11 email lessons walk you through the first 30 days of a habit step-by-step, so you know exactly what to do.</li>
+            <li class="bullet-paragraph"><strong>Get the tools and strategies you need to take action.</strong> The course includes a 20-page PDF workbook (including templates and cheatsheets), plus new examples and applications that you can’t find in Blendin or Standout.</li>
+            <li class="bullet-paragraph"><strong>Learn a framework that works for any habit formation.</strong> You can use this course to build any habit - from getting fit, to developing an excellent body language that portrays confidence.</li>
+        </ul>
+    </div>
+
+<div class="video-content">
+        <!-- Embed your YouTube video here -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_vjXWw53LU8?si=M89YClRbo4SmdS3W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <p class="text-content">Watch the exclusive tedtalk video of <strong><a href="https://wikifamouspeople.com/saheli-chatterjee/">Ms. Saheli Chatterjee</a></strong>, a social media and marketing consultant</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/qYvXk_bqlBk?si=IBs382Jrg8hw2AXr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <p class="text-content">Watch the exclusive tedtalk video of <strong><a href="https://www.brianrlittle.com/?doing_wp_cron=1693737041.0233550071716308593750">Mr. Brian Little</a></strong> as he dissects the surprising differences between introverts and extroverts and explains why your personality may be more malleable than you think.</p>
+      </div><br><br><br>
+    <p class="bottom-p">"Embrace the journey of self-discovery and personal growth with us. Whether you choose to blend in seamlessly with the world around you or stand out boldly, remember that your authentic self is your greatest asset. Let our resources and insights guide you on this transformative path, where you'll <align ="left">find the balance that suits you best. Start your journey today, and let your unique personality shine."</align></p><br><br>
+
+<div class="image-container">
+  <img src="black.png" alt="Image description" width="100%" height="200">
+  <div class="image-text">&copy Project developers :<br> &nbsp Shabbir Ali</div>
+</div>
+</body>
+</html>

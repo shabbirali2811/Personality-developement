@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEMO VIDEOS</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: orange;
+       
+    }
+   
+    .jumbotron {
+       background-image: url("image/interview.jpg");
+       color: white;
+       text-align: center;
+     }
+
+    .video-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+         
+    }
+
+    .video-card {
+        margin: 20px;
+        width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        background-color: cyan;
+        
+    }
+
+    .video-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .video-card iframe {
+        width: 100%;
+        height: 180px;
+    }
+
+    .video-info {
+        padding: 10px;
+    }
+
+    .video-info h2 {
+        margin-top: 0;
+        font-size: 16px;
+    }
+
+    .video-info p {
+        margin-bottom: 0;
+        color: #666;
+    }
+</style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+     <font size="+2">
+    <h1>Trial Videos!</h1>
+    <p>Don't miss out on these amazing deals</p>
+    </font>
+  </div> 
+
+<a href="offer_page.html" class="star-button blink"> BACK </a>
+    <style>
+    /* Styling for the star-like button */
+    .star-button {
+        display: inline-block;
+        position: relative;
+        background-color: red;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        aling:center;
+    }
+    
+    .star-button:hover {
+        background-color: #e67e22;
+    }
+    
+    /* Styling for the blinking animation */
+    .blink {
+        animation: blink 1s infinite;
+    }
+    
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+</style>
+
+<div class="video-container">
+    <div class="video-card">
+        <iframe src="https://youtube.com/embed/yrexAx6N9to?si=2Tckysq9HGCgoHli" frameborder="0" allowfullscreen></iframe>
+        <div class="video-info">
+            <h2>PCS Global</h2>
+            <p>HR interview</p>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <iframe src="https://youtube.com/embed/y3bPNgK5xe0?si=QOQ_FPc18dcjrkXJ" frameborder="0" allowfullscreen></iframe>
+        <div class="video-info">
+            <h2>PCS Global</h2>
+            <p>Real life coding interview</p>
+        </div>
+    </div>
+   
+    <div class="video-card">
+        <iframe src="https://youtube.com/embed/LPYjVqjPMdY?si=pMmQOU1GR6t9I2GC" frameborder="0" allowfullscreen></iframe>
+        <div class="video-info">
+            <h2>PCS Global</h2>
+            <p>Interview with ELIP candidates</p>
+        </div>
+    </div>
+   
+    <div class="video-card">
+        <iframe src="https://youtube.com/embed/_rlgpyGxBE4?si=K-QQTZnmFE_pZsCD" frameborder="0" allowfullscreen></iframe>
+        <div class="video-info">
+            <h2>PCS Global</h2>
+            <p>Interview with new candidates</p>
+        </div>
+    </div>
+
+   <div class="video-card">
+        <iframe src="https://youtube.com/embed/I73kUR3HkPQ?si=RZgovXjiU7T8jj_E" frameborder="0" allowfullscreen></iframe>
+        <div class="video-info">
+            <h2>PCS Global</h2>
+            <p>Interview TIPS and TRICKS</p>
+        </div>
+    </div>
+
+   <div class="video-card">
+        <iframe src="https://youtube.com/embed/ivPta8nHUoA?si=g0k4eBmIZuhaQdiF" frameborder="0" allowfullscreen></iframe>
+        <div class="video-info">
+            <h2>PCS Global</h2>
+            <p>Joining speech</p>
+        </div>
+    </div>
+
+  
+
+   
+
+    <!-- Add more video cards as needed -->
+</div>
+
+</body>
+</html>

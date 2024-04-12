@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speech-to-Text & Text-to-Speech Converter</title>
+<style>
+    #output {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        min-height: 100px;
+        background-color: white;
+    }
+      button {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+</style>
+</head>
+<body style="background-color:cyan;">
+<h1 align="center" style="background-color:red;">Speech-to-Text & Text-to-Speech Converter</h1>
+
+<h2 style ="width:200px;background-color:#757575;">Speech-to-Text</h2>
+
+<button id="startRecord">Start Recording</button> 
+<button id="stopRecord">Stop Recording</button>
+
+<div id="output"></div>
+
+<h2 style ="width:200px;background-color:#757575;">Text-to-Speech</h2>
+<input type="text" id="textToSpeechInput" placeholder="Enter text to convert to speech">
+<button id="convertToSpeech">Convert to Speech</button>
+
+<script>
+    const outputDiv = document.getElementById('output');
+    const startRecordBtn = document.getElementById('startRecord');
+    const stopRecordBtn = document.getElementById('stopRecord');
+    const convertToSpeechBtn = document.getElementById('convertToSpeech');
+    const textToSpeechInput = document.getElementById('textToSpeechInput');
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = 'en-US'; // Set recognition language to English
+
+    let listening = false;
+
+    recognition.onresult = function(event) {
+        const result = event.results[0][0].transcript;
+        outputDiv.textContent = result;
+    };
+
+    recognition.onstart = function() {
+        outputDiv.textContent = 'Recording...';
+        listening = true;
+    };
+
+    recognition.onspeechend = function() {
+        recognition.stop();
+        listening = false;
+    };
+
+    recognition.onerror = function(event) {
+        outputDiv.textContent = 'Error occurred: ' + event.error;
+        listening = false;
+    };
+
+    startRecordBtn.addEventListener('click', function() {
+        if (!listening) {
+            recognition.start();
+        }
+    });
+
+    stopRecordBtn.addEventListener('click', function() {
+        if (listening) {
+            recognition.stop();
+        }
+    });
+
+    convertToSpeechBtn.addEventListener('click', function() {
+        const text = textToSpeechInput.value.trim();
+        if (text !== '') {
+            speak(text);
+        }
+    });
+
+    // Text-to-Speech functionality (using speechSynthesis)
+    function speak(text) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // Example usage
+    speak("Welcome to the speech to text and text to speech converter.");
+
+</script>
+</body>
+</html>

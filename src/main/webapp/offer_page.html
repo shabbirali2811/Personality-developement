@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="offerApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exciting Offers</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS for styling */
+    body {
+      background-color: #f8f9fa;
+    }
+    .jumbotron {
+      background-color: orange;
+       background-image: url("image/interview.jpg");
+      color: white;
+      
+    }
+    .offer-card {
+      margin-bottom: 20px;
+      background-color:cyan;
+     
+    }
+    .img{
+         width:50%;
+         height:50%;
+    }
+  </style>
+</head>
+<body ng-controller="OfferController">
+  
+  <div class="jumbotron text-center">
+     <font size="+2">
+    <h1>Exciting Offers!</h1>
+    <p>Don't miss out on these amazing deals</p>
+    </font>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" ng-repeat="offer in offers">
+        <div class="card offer-card">
+          <img class="card-img-top" src="{{offer.image}}" alt="Offer Image" width:50%;>
+          <div class="card-body">
+            <h5 class="card-title">{{offer.title}}</h5>
+            <p class="card-text">{{offer.description}}</p>
+            <p class="card-text">Original Price: <del>{{offer.originalPrice}}</del></p>
+            <p class="card-text">Discounted Price: <strong>{{offer.discountedPrice}}</strong></p>
+            <a href="payment.html" class="btn btn-primary">Grab Deal</a>
+            <a href="demoVIDEO.html" class="star-button blink"> FREE TRIALS </a>
+    <style>
+    /* Styling for the star-like button */
+    .star-button {
+        display: inline-block;
+        position: relative;
+        background-color: red;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        aling:center;
+    }
+    
+    .star-button:hover {
+        background-color: #e67e22;
+    }
+    
+    /* Styling for the blinking animation */
+    .blink {
+        animation: blink 1s infinite;
+    }
+    
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+</style>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+  <script>
+    // AngularJS App
+    angular.module('offerApp', [])
+    .controller('OfferController', function($scope) {
+      // Sample data for offers
+      $scope.offers = [
+        {
+          title: '50% Off on Interview preparation',
+          description: 'Get amazing discounts .',
+          originalPrice: '$1000',
+          discountedPrice: '$500',
+          image: 'image/interview1.gif'
+        	 
+        
+        	  
+        },
+        {
+          title: '50% off on PUBLIC SPEAKING',
+          description: 'Hurry! Hurry! Hurry!.',
+          originalPrice: '$50',
+          discountedPrice: '$25',
+          image: 'image/speaking.gif '
+        },
+        {
+          title: 'Complete Personality Developement',
+          description: 'Like Finishing School.',
+          originalPrice: '$2000',
+          discountedPrice: '$1000',
+          image: 'image/deve.gif'
+        }
+      ];
+    });
+  </script>
+</body>
+</html>

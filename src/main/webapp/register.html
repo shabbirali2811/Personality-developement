@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="ISO-8859-1">
+		<title>Registration Page</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			nav {
+	            background-color: #E8E8E8;
+	        }
+	        .nav-item.nav-link{
+	        	font-size:18px;
+	        	color: #454545 !important;
+	        }
+	        .nav-item.nav-link:hover,
+	        .nav-item.nav-link.active{
+	        	color: #e44e4e !important;
+	        }
+	         .nav-item.nav-link.active:after{
+	         	    content: " ";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #e44e4e;
+    position: absolute;
+    top: 77px;
+    /* left: -6px; */
+    right: 47px;
+	         }   
+	        ul {
+	            list-style-type: none;
+	            margin: 0;
+	            padding: 0;
+	            overflow: hidden;
+	        }
+	        
+	        li {
+	            float: left;
+	        }
+	        
+	        li a {
+	            display: block;
+	            color: black;
+	            text-align: center;
+	            padding: 7px 19px;
+	            text-decoration: none;
+	            font-family: cursive;
+	            font-size: 29px;
+	        }
+	        
+	        li a:hover {
+	            background-color: #555;
+	        }
+	
+	        /* CSS for logo */
+	        .navbar-brand img {
+	            width: 50px; /* Adjust the desired width */
+	            height: 50px; /* Adjust the desired height */
+	            border-radius: 50%; /* Creates a circular shape */
+	            margin-right: 10px; /* Add spacing between logo and text */
+	        }
+	       
+	        .results_box {
+	            background: rgb(245,245,245);
+	            border-radius: 12px;
+	            box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+	            padding: 25px 50px;
+	            width: 500px;
+	            margin: 20px auto;
+	            font-size: .95rem;
+			}
+		</style>
+	</head>
+	<body>
+	<nav class="page-navbar navbar navbar-expand-lg navbar-light">
+	  <a class="navbar-brand" href="#"><img src="LOGO.jpg" alt="Logo">BLENDin OR STANDout</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="navbar-menu collapse navbar-collapse" id="navbarNavAltMarkup">
+	    <div class="navbar-nav">
+	    	<a class="nav-item nav-link mx-2" href="BlendinorStandout.html">Home</a>
+	      	<a class="nav-item nav-link mx-2" href="index1.html">Login</a>
+	      	<a class="nav-item nav-link active" href="#">Register</a>   
+	    </div>
+	  </div>
+	</nav> 
+	<section class="register-body">
+		<div class="register-body-container d-flex">
+			<section class="left-section w-50">
+				<div class="left-section-container">
+					<h2 class="register-heading">Register</h2>						
+			        <form id="registration-form" action="add.jsp" method="post">
+			            <input type="text" id="username" name="username" class="register-input" placeholder="Username" required>
+			            <span class="error" id="username-error"></span>
+			
+			            <input type="email" id="email" name="email" class="register-input" placeholder="Email" required>
+			            <span class="error" id="email-error"></span>
+			
+			            <input type="password" id="password" name="password" class="register-input" placeholder="Password" required>
+			            <span class="error" id="password-error"></span>
+			
+			            <input type="password" id="confirm-password" name="confirm-password" class="register-input" placeholder="Confirm Password" required>
+			            <span class="error" id="confirm-password-error"></span>
+			
+			            <input type="submit" value="Register" id="register-btn" class="register-btn">
+			        </form>
+				</div>
+			</section>
+			<section class="right-section">
+				<div class="right-section-container">
+					<h3 class="register-right-section-heading">Welcome</h3>
+					<p class="register-right-section-para">Welcome! Here at BLENDin or STANDout self-discovery meets community. Join us on a journey to explore and understand your unique personality. </p>
+					<button type="button" onclick="window.location.href='index1.html';" class="register-right-section-btn">Have an account? Login</button>
+				</div>
+			</section>
+		</div>
+	</section>
+		
+	 <script>
+        const form = document.getElementById('registration-form');
+        const nameInput = document.getElementById('username');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+        const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+        form.addEventListener('submit', function (e) {
+            let valid = true;
+
+            if (nameInput.value.trim() === '') {
+                document.getElementById('username-error').textContent = 'Name is required';
+                valid = false;
+            } else {
+                document.getElementById('username-error').textContent = '';
+            }
+
+            if (emailInput.value.trim() === '') {
+                document.getElementById('email-error').textContent = 'Email is required';
+                valid = false;
+            } else if (!emailRegex.test(emailInput.value.trim())) {
+                document.getElementById('email-error').textContent = 'Invalid email address';
+                valid = false;
+            } else {
+                document.getElementById('email-error').textContent = '';
+            }
+
+            if (passwordInput.value.trim() === '') {
+                document.getElementById('password-error').textContent = 'Password is required';
+                valid = false;
+            } else {
+                document.getElementById('password-error').textContent = '';
+            }
+
+            if (confirmPasswordInput.value.trim() === '') {
+                document.getElementById('confirm-password-error').textContent = 'Confirm Password is required';
+                valid = false;
+            } else if (passwordInput.value !== confirmPasswordInput.value) {
+                document.getElementById('confirm-password-error').textContent = 'Passwords do not match';
+                valid = false;
+            } else {
+                document.getElementById('confirm-password-error').textContent = '';
+            }
+
+            if (!valid) {
+                e.preventDefault();
+            }
+        });
+    </script>
+	</body>
+</html>

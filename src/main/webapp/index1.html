@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Login</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			nav {
+        	padding: 0 24px !important;
+            background-color: #E8E8E8;
+        }   
+        .nav-item.nav-link{
+        	font-size:18px;
+        	color: #454545 !important;
+        	position:relative;
+        }
+        .nav-item.nav-link:hover,
+        .nav-item.nav-link.active{
+        	color: #e44e4e !important;
+        }
+         .nav-item.nav-link.active:after{
+         	    content: " ";
+			    display: block;
+			    width: 100%;
+			    height: 3px;
+			    background-color: #e44e4e;
+			    position: absolute;
+			    top: 49px;
+			    left: 0;
+         }   
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 7px 19px;
+            text-decoration: none;
+            font-family: cursive;
+            font-size: 29px;
+        }
+        
+        li a:hover {
+            background-color: #555;
+        }
+
+        /* CSS for logo */
+        .navbar-brand img {
+            width: 50px; /* Adjust the desired width */
+            height: 50px; /* Adjust the desired height */
+            border-radius: 50%; /* Creates a circular shape */
+            margin-right: 10px; /* Add spacing between logo and text */
+        }
+		</style>
+	</head>
+	<body>
+		<nav class="page-navbar navbar navbar-expand-lg navbar-light">
+		  <a class="navbar-brand" href="#"><img src="LOGO.jpg" alt="Logo">BLENDin OR STANDout</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="navbar-menu collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+		    <div class="navbar-nav">
+		    	<a class="nav-item nav-link mx-2" href="BlendinorStandout.html">Home</a>
+		      	<a class="nav-item nav-link mx-2 active" href="#">Login</a>
+		      	<a class="nav-item nav-link" href="register.html">Register</a>
+		    </div>
+		  </div>
+		</nav> 
+		<section class="login-body">
+			<div class="login-body-container d-flex">
+				<section class="left-section w-50">
+					<div class="left-section-container">
+						<h2 class="login-heading">Sign-in</h2>
+						<form action="login_check.jsp">
+							<div class="d-flex flex-column">
+								<input id="username" name="username" class="login-input" placeholder="Username">
+								<input id="password" name="password" type="password" class="login-input" placeholder="Password">		
+								<input type="submit" value="Login" id="login-btn" class="login-btn">
+							</div>
+						</form>
+					</div>
+				</section>
+				<section class="right-section">
+					<div class="right-section-container">
+						<h3 class="login-right-section-heading">Welcome back!</h3>
+						<p class="login-right-section-para">Welcome back! We are so happy to have you here. It's great to see you again. We hope you had a safe and enjoyable time away.</p>
+						<button type="button" onclick="window.location.href='register.html';" class="login-right-section-btn">No account? Register</button>
+					</div>
+				</section>
+			</div>
+		</section>
+		
+	</body>
+</html>

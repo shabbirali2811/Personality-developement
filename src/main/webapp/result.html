@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Final slide</title>
+			<link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+		body {
+            margin: 0;     /* CSS for the navigation bar */
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        nav {
+            background-color: #E8E8E8;
+        }
+        .nav-item.nav-link{
+        	font-size:18px;
+        	color: #454545 !important;
+        }
+        .nav-item.nav-link:hover,
+        .nav-item.nav-link.active{
+        	color: #e44e4e !important;
+        }
+          
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 7px 19px;
+            text-decoration: none;
+            font-family: cursive;
+            font-size: 29px;
+        }
+        
+        li a:hover {
+            background-color: #555;
+        }
+
+        /* CSS for logo */
+        .navbar-brand img {
+            width: 50px; /* Adjust the desired width */
+            height: 50px; /* Adjust the desired height */
+            border-radius: 50%; /* Creates a circular shape */
+            margin-right: 10px; /* Add spacing between logo and text */
+        }
+       
+        .results_box {
+            background: rgb(245,245,245);
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+            padding: 25px 50px;
+            width: 500px;
+            margin: 20px auto;
+            font-size: .95rem;
+		}
+
+	/* Style for the results bar */
+		.results-bar {
+		    background-color: #f0f0f0;
+		    color: #333; /* Text color */
+		    padding: 20px; /* Padding around the content */
+		    text-align: center; /* Center-align the text */
+		    font-size: 20px; /* Font size */
+		    border-bottom: 2px solid #ccc; /* Add a bottom border */
+		    width: 90%; /* empty bar width */
+		    position: relative;
+		    border-radius: 8px;
+		    font-weight: bold;
+		}
+		.result-text {
+			display: flex;
+		    position: absolute; /* Position the text absolutely */
+		    top: 50%; /* Vertically center the text */
+		    left: 50%; /* Horizontally center the text */
+		    transform: translate(-50%, -50%); /* Center the text precisely */
+		    z-index: 1; /* Ensure the text appears over the colored portion */
+		}
+		.colored-portion1 {
+		    background-color: #007acc; /* Color of the colored portion */
+		    height: 100%; /* 100% height of the parent (results-bar) */
+		    width: 40%; /* Desired percentage width (e.g., 40%) */
+		    position: absolute; /* Position the colored portion absolutely */
+		    top: 0; /* Align it to the top */
+		    left: 0; /* Align it to the left */
+		    border-radius: 8px;
+		}
+		
+		.colored-portion2{
+		     background-color: green; /* Color of the colored portion */
+		    height: 100%; /* 100% height of the parent (results-bar) */
+		    width: 50%; /* Desired percentage width (e.g., 40%) */
+		    position: absolute; /* Position the colored portion absolutely */
+		    top: 0; /* Align it to the top */
+		    left: 0; /* Align it to the left */
+		    border-radius: 8px;
+		}
+		.colored-portion3{
+		     background-color: orange; /* Color of the colored portion */
+		    height: 100%; /* 100% height of the parent (results-bar) */
+		    width: 20%; /* Desired percentage width (e.g., 40%) */
+		    position: absolute; /* Position the colored portion absolutely */
+		    top: 0; /* Align it to the top */
+		    left: 0; /* Align it to the left */
+		    border-radius: 8px;
+		}
+		.colored-portion4{
+		     background-color: purple; /* Color of the colored portion */
+		    height: 100%; /* 100% height of the parent (results-bar) */
+		    width: 80%; /* Desired percentage width (e.g., 40%) */
+		    position: absolute; /* Position the colored portion absolutely */
+		    top: 0; /* Align it to the top */
+		    left: 0; /* Align it to the left */
+		    border-radius: 8px;
+		}
+		.colored-portion5{
+		     background-color: red; /* Color of the colored portion */
+		    height: 100%; /* 100% height of the parent (results-bar) */
+		    width: 60%; /* Desired percentage width (e.g., 40%) */
+		    position: absolute; /* Position the colored portion absolutely */
+		    top: 0; /* Align it to the top */
+		    left: 0; /* Align it to the left */
+		    border-radius: 8px;
+		}
+	  .results_box {
+	            background: #E0E0E0;
+	            border-radius: 12px;
+	            box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+	            padding: 25px 50px;
+	            width: 500px;
+	            margin: 20px auto;
+	            font-size: .95rem;
+		}	
+		.larger-results_box {
+		      background: rgb(245,245,245);
+		      color:white;
+	            border-radius: 8px;
+	            box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+	            padding: 25px 50px;
+	            width: 900px;
+	            margin: 30px auto;
+	            font-size: .95rem;
+	            position: relative;
+	            z-index: 1; 
+		}
+        .results_box {
+            background: rgb(245,245,245);
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+            padding: 25px 50px;
+            width: 450px;
+            margin: 40px auto;
+            font-size: .95rem;
+            position: relative;
+            z-index: 2; 
+		}
+		.larger-results_box::before {
+            content: "";
+            background-image: url('Dwallpaper.jpg'); /* Replace 'background.jpg' with your image file's path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5; /* Adjust the opacity as needed */
+            z-index: -1; /* Place the background behind the content */
+            border-radius: 8px;
+        }
+		.head-h2 {
+           margin-top: 32px;
+           padding: 22px 20px;
+           font-size: 37px;
+           font-family: courier new;
+           color: green;
+           text-align: center;
+    		font-weight: 600;
+		}
+		.feedback-link{
+			bottom:150px;
+			right:-22px;
+			padding: 10px 16px;
+			background-color: #a2a2fe;
+			border-radius:2px;
+			color:black;
+		}
+	</style>
+</head>
+<body>
+	<nav class="page-navbar navbar navbar-expand-lg navbar-light">
+	  <a class="navbar-brand" href="#"><img src="LOGO.jpg" alt="Logo">BLENDin OR STANDout</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="navbar-menu collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+	    <div class="navbar-nav">
+	    	<a class="nav-item nav-link mx-2" href="Question.html">Personality test</a>
+	    	<a class="nav-item nav-link mx-2 active" href="#">Result</a>
+	      	<a class="nav-item nav-link" href="index.html">Logout</a>
+	    </div>
+	  </div>
+	</nav> 
+	<section class="result_view ">
+		<h2 class="head-h2">THE BIG FIVE ASPECTS</h2>
+		<a href="feedbackForm.html" class="feedback-link">Feedback</a>
+		
+   <a href="offer_page.html" class="star-button blink"> $$ Check out our Offer! $$ </a>
+    <style>
+    /* Styling for the star-like button */
+    .star-button {
+        display: inline-block;
+        position: relative;
+        background-color: red;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    
+    .star-button:hover {
+        background-color: #e67e22;
+    }
+    
+    /* Styling for the blinking animation */
+    .blink {
+        animation: blink 1s infinite;
+    }
+    
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+</style>
+		<div class="larger-results_box">
+		    <h1>Your Results:</h1>
+		    <p>These scores are percentiles. They tell you how high you score relative to other people.So, for example,you scored in the 47th percentile of extraversion. That means that you are more extraverted 47% of people who have taken this assessment online. </p>
+			<div class="results_box">
+			    <div class="results-bar Neuroticism">
+			        <div class="colored-portion colored-portion1"></div>
+			        <p class="result-text">Neuroticism-<span class="mx-1 Neuroticism-per"></span></p>
+			    </div><br>
+			    <div class="results-bar Agreableness">
+			        <div class="colored-portion colored-portion2"></div>
+			        <p class="result-text">Agreableness-<span class="mx-1 Agreableness-per"></span></p>
+			    </div><br>
+			    <div class="results-bar Openness">
+			        <div class="colored-portion colored-portion3"></div>
+			        <p class="result-text">Openness-<span class="mx-1 Openness-per"></span></p>
+			    </div><br>
+			    <div class="results-bar Extraversion">
+			        <div class="colored-portion colored-portion4"></div>
+			        <p class="result-text">Extraversion-<span class="mx-1 Extraversion-per"></span></p>
+			    </div><br>
+			    <div class="results-bar Conscientiousness">
+			        <div class="colored-portion colored-portion5"></div>
+			        <p class="result-text">Conscientiousness-<span class="mx-1 Conscientiousness-per"></span></p>
+			    </div></div>
+			   <h1>Neuroticism</h1>
+			   <p>Neuroticism is characterized by a person's tendency to experience negative emotions, such as anxiety, sadness, irritability, and mood swings. Individuals who score high on the neuroticism dimension are often described as emotionally unstable or prone to emotional distress. They may be more likely to worry, ruminate on negative events, and experience frequent and intense negative emotions.If your score is below <strong>48%</strong> you are already above to the most of the people who have taken this personality text so far<br><br> As per your score Here are some links that we have provided below you can go through them and improve yourself.<br><br>
+			
+				Want to know yourself better ? <a href="https://youtu.be/ewU7Vb9ToXg?si=Xsk6RF9HQt47ufDH">Watch the exclusive</a><br>In case you want to know more about <strong>Neuroticism</strong> : <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5428182/#:~:text=Neuroticism%20is%20the%20trait%20disposition,emotional%20instability%2C%20and%20depression1.">Click</a><br> In case you are facing anxiety issues, having random emotional breakdown you may visit :<a href="https://www.google.com/search?q=Best+clinical+psychologist+near+me&sca_esv=562779362&sxsrf=AB5stBjIVijisRdoV9qfcj3uCYmCN8O0eg%3A1693939386375&ei=unb3ZIG-FvvXseMPqea6mAU&ved=0ahUKEwiBg5X7j5SBAxX7a2wGHSmzDlMQ4dUDCA8&uact=5&oq=Best+clinical+psychologist+near+me&gs_lp=Egxnd3Mtd2l6LXNlcnAiIkJlc3QgY2xpbmljYWwgcHN5Y2hvbG9naXN0IG5lYXIgbWUyCBAAGIoFGJECMggQABiKBRiGAzIIEAAYigUYhgMyCBAAGIoFGIYDMggQABiKBRiGA0jHHlDkBVjOGXABeAGQAQCYAbEBoAHLC6oBAzAuObgBA8gBAPgBAcICChAAGEcY1gQYsAPCAgcQIxiwAhgnwgIGEAAYBxge4gMEGAAgQYgGAZAGCA&sclient=gws-wiz-serp">Here</a>
+				</p>
+			
+			   <h1>Agreableness</h1>
+			   <p> Agreeableness represents one's interpersonal and social orientation and describes how individuals tend to interact with others and handle social situations. It reflects the degree to which a person is friendly, cooperative, compassionate, and considerate as opposed to being critical, competitive, and antagonistic.If you have a high score on Agreableness say <strong>70% or above</strong> then you are the type of person who could be easily taken advantage of<br><br> As per your score Here are some links that we have provided below you can go through them and improve yourself.<br><br>In case you want to know more about <strong>Agreableness</strong> :<a href="https://www.sciencedirect.com/topics/psychology/agreeableness#:~:text=Agreeableness%20references%20an%20individual's%20interpersonal,arrogant%2C%20and%20unconcerned%20about%20others.">Read</a><br>Learn about why you need to understand this important Fifth aspect of the Big Five : <a href="https://youtu.be/G1eHJ9DdoEA?si=TlL4TFuWiDMfhmXG">Click</a></p>
+			
+			   
+			   <h1>Openness</h1>
+			   <p>Openness refers to an individual's willingness to embrace new experiences, ideas, and perspectives. It reflects a person's intellectual curiosity, creativity, and receptivity to novel concepts. This trait can be seen as a continuum, with individuals falling somewhere between high openness and low openness.Having openness score between <strong>40-50%</strong> is considered ideal<br><br> As per your score Here are some links that we have provided below you can go through them and improve yourself.<br><br>
+			Lets dive deep into understanding <strong>Openness</strong> :<a href="https://youtu.be/D7Kn5p7TP_Y?si=bLbPShd7yPL7_jxg">Click</a> <br>
+			Take a Sneek Peek here as well :<a href="https://www.verywellmind.com/how-openness-influences-your-behavior-4796351#:~:text=Openness%20refers%20to%20how%20open,'">Read</a></p>
+			
+			   <h1>Extraversion</h1>
+			   <p>Extraversion refers to an individual's social orientation and their level of enthusiasm, assertiveness, and comfort in social situations. This trait exists on a continuum, with individuals falling somewhere between high extraversion and low extraversion.<br><br> As per your score Here are some links that we have provided below you can go through them and improve yourself.Usually people have an Extraversionism of not more than <strong>65%</strong> <br><br>
+			All about what you need to know about <strong>Extraversion</strong> :<a href="https://youtu.be/dYTAv7eQ-vg?si=1-v872H8LYYE4vWV">Click</a>  <br>
+			A social behaviour is what give you influence over people :<a href="https://www.sciencedirect.com/topics/psychology/extraversion">Read</a></p>
+			   
+			   <h1>Conscientiousness</h1>
+			   <p>Conscientiousness relates to an individual's degree of organization, self-discipline, responsibility, and goal-oriented behavior. People with high conscientiousness tend to be organized, reliable, and focused on achieving their goals, while those with low conscientiousness may be more disorganized and less diligent in their approach to tasks and responsibilities.<br><br> As per your score Here are some links that we have provided below you can go through them and improve yourself.Conscientiousness can vary greatly depending on the context and individual preferences.<strong>Usually a person having a good score is considered to be self disciplined and Stoic.</strong><br><br>
+				All about what you need to know about <strong>Conscientiousness</strong> :<a href="https://youtu.be/q15eTySnWxc?si=wG6guTWyOzO4ypML">Click</a> <br>
+			 A social behaviour is what give you influence over people :<a href="https://www.psychologytoday.com/us/basics/conscientiousness#:~:text=A%20conscientious%20person%20is%20good,take%20obligations%20to%20others%20seriously.">Read</a></p>
+
+		</div>
+	</section>
+	<script src="js/jquery.js"></script>
+	<script>function updateColorBasedBars() {	
+		var retrievedArray = JSON.parse(localStorage.getItem('myArray'));
+		$(document).ready(function(){
+			let bar1 = document.querySelector(".Neuroticism > .colored-portion1");
+			let per1 = document.querySelector(".Neuroticism-per");
+		    bar1.style.width = retrievedArray[0]+"%";
+		    per1.textContent = Math.ceil(retrievedArray[0])+"%";
+		    console.log(retrievedArray[0]);
+		    console.log(bar1.style.width);
+		    
+		    let bar2 = document.querySelector(".Agreableness > .colored-portion2");
+		    let per2 = document.querySelector(".Agreableness-per");
+		    bar2.style.width = retrievedArray[1]+"%";
+		    per2.textContent = Math.ceil(retrievedArray[1])+"%";
+		    console.log(retrievedArray[1]);
+		    console.log(bar2.style.width);
+		    
+		    let bar3 = document.querySelector(".Openness .colored-portion3");
+		    let per3 = document.querySelector(".Openness-per");
+		    bar3.style.width = retrievedArray[2]+"%";
+		    per3.textContent = Math.ceil(retrievedArray[2])+"%";
+		    
+		    let bar4 = document.querySelector(".Extraversion .colored-portion4");
+		    let per4 = document.querySelector(".Extraversion-per");
+		    bar4.style.width = retrievedArray[3]+"%";
+		    per4.textContent = Math.ceil(retrievedArray[3])+"%";
+		    
+		    let bar5 = document.querySelector(".Conscientiousness .colored-portion5");
+		    let per5 = document.querySelector(".Conscientiousness-per");
+		    bar5.style.width = retrievedArray[4]+"%";
+		    per5.textContent = Math.ceil(retrievedArray[4])+"%";
+
+	});
+		
+	}
+	updateColorBasedBars()
+	</script>
+
+</body>
+</html>
+
