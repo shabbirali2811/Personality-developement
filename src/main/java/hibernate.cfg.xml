@@ -1,22 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!--  this file will store data information like driver user name pass -->
+<!--   this file will store data information like driver user name pass  -->
 <hibernate-configuration>
- <session-factory>
- <property name="hibernate.dialect"> org.hibernate.dialect.MySQL8Dialect</property>
+<session-factory>
+<property name="hibernate.dialect"> org.hibernate.dialect.MySQL8Dialect</property>
 <property name="hibernate.connection.driver_class"> com.mysql.cj.jdbc.Driver</property>
+<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/blendin</property>
 
-<property name="hibernate.connection.url">jdbc:mysql://viaduct.proxy.rlwy.net:35651/railway</property>
-
-
- <property name="hibernate.connection.username">root</property>
- <property  name="hibernate.connection.password">ZYfHIQopvGmQCbuWUDvjfxQkrfJZbaBi</property>
- <property name="hbm2ddl.auto">update</property>
- <property name="show_sql">false</property>
- 
- <mapping class="com.model.login"/>
- <mapping class="com.model.Feedback"/>
- <mapping class="com.model.payments"/>
-
- </session-factory>
+<property name="hibernate.connection.username">root</property>
+<property name="hibernate.connection.password">Shabbir@123</property>
+<property name="hbm2ddl.auto">update</property>
+<property name="show_sql">true</property>
+<mapping class="com.model.login"/>
+<mapping class="com.model.Feedback"/>
+<mapping class="com.model.payments"/>
+</session-factory>
 </hibernate-configuration>
